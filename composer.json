@@ -1,16 +1,16 @@
 {
-    "name": "zinovyev/php-fsm",
-    "description": "PHP Finite-state Machine",
+    "name": "apriliaan/php-fsm",
+    "description": "A fork of PHP Finite-state Machine by Ivan Zinovyev with additional functionality that I need",
     "keywords": ["finite-state", "machine", "automaton", "statemachine", "state", "transition"],
     "license": "GPLv2",
     "authors": [
         {
-            "name": "Ivan Zinovyev",
-            "email": "ivan@zinovyev.net"
+            "name": "Aprilia Agung Nugroho",
+            "email": "apriliaan@gmail.com"
         }
     ],
     "require": {
-        "php":  ">=5.4"
+        "php": ">=5.4"
     },
     "autoload": {
         "psr-4": {
