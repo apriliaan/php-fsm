@@ -34,9 +34,9 @@ class StateMachine extends Client
     public function __construct()
     {
         parent::__construct();
-        
+
         /* ... */
-        
+
         $this
             ->addState($stateA)
             /* ... */
@@ -105,7 +105,7 @@ class StateC extends State
     {
         return strrev($fb);
     }
-    
+
     public function shuffle(array $array) {
         shuffle($array);
         return $array;
@@ -121,27 +121,27 @@ class StateMachine extends Client
     public function __construct()
     {
         parent::__construct();
-        
+
         // Create StateA initial type instance of class StateA
         $stateA = new StateA();
         $stateA->setName('stateA');
         $stateA->setType(StateInterface::TYPE_INITIAL);
-        
+
         // Create StateB finite type instance of class StateB
         $stateB = new StateB();
         $stateB->setName('stateB');
         $stateB->setType(StateInterface::TYPE_FINITE);
-        
+
         // Create StateC regular type instance of class StateC
         $stateC = new StateC();
         $stateC->setName('stateC');
         $stateC->setType(StateInterface::TYPE_REGULAR);
-        
+
         // Create StateD regular type instance of class StateB
         $stateD = new StateB();
         $stateD->setName('stateD');
-        $stateD->setType(StateInterface::TYPE_REGULAR);        
-        
+        $stateD->setType(StateInterface::TYPE_REGULAR);
+
         // Attach states and transitions
         $this
             ->addState($stateA)
@@ -158,7 +158,7 @@ class StateMachine extends Client
             ->createTransition('fourthAlternative', 'stateC', 'stateB')
             ->createTransition('shortWay', 'stateA', 'stateB')
         ;
-        
+
     }
 }
 
@@ -214,6 +214,7 @@ printf("%d) State machine is at state '%s'. Test function call result: '%s'\n", 
     $stateMachine->getCurrentState()->getName(),    // Get State Name
     $stateMachine->bar(2)                           // Call State function
 );
+printf("%d) Transition 'fourth' came from '%s'.", 6, $stateMachine->getSourceState->getName());
 ```
 
 ## Example code execution result:
@@ -226,4 +227,5 @@ printf("%d) State machine is at state '%s'. Test function call result: '%s'\n", 
 =*= Check property value after restore: $foo='bar' =*=
 4) State machine is at state 'stateD'. Test function call result: '2'
 5) State machine is at state 'stateB'. Test function call result: '4'
+6) Transition 'fourth' came from 'stateD'
 ```
